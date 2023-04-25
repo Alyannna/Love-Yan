@@ -1,0 +1,82 @@
+/* layout stuff */
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  padding: 0px 25px 0px 100px;
+}
+
+/* side by side columns*/
+.content {
+  flex: 50%;
+  padding: 10px;
+}
+
+
+
+
+.title {
+	display: flex;
+	justify-content: center;
+	margin: 15px;
+	font-family: "highest-praise", sans-serif, "brush script mt", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 100px;
+}
+
+.name {
+	font-family: "highest-praise", sans-serif, "brush script mt", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 50px;
+}
+
+img {
+  float: left;
+  margin: 0px 20px 15px 0px;
+}
+
+.desc {
+	overflow-wrap: normal;
+	width: 75%;
+	font-size: 16px;
+}
+
+.descr {
+	overflow-wrap: normal;
+	width: 37%;
+	font-size: 16px;
+}
+
+
+
+
+
+.about {
+	background-color: #F0E4D5;
+	padding: 36px;
+}
+
+.why {
+	font-family: "highest-praise", sans-serif, "brush script mt", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	margin: 15px;
+}
+
+.info {
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	alignt-items: center;
+	margin: 15px;
+	overflow-wrap: normal;
+	margin: 0 auto;
+	width: 50%;
+}

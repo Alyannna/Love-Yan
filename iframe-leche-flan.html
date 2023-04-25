@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game</title>
+	<link href="global-styling-love-yan.css" rel="stylesheet">
+	<!--title/h1 font from Adobe fonts-->
+	<link rel="stylesheet" href="https://use.typekit.net/xwm4obb.css">
+	<!--icons ref by fontawesome.com-->
+	<script src="https://kit.fontawesome.com/fe20f8dbe0.js" crossorigin="anonymous"></script>
+
+
+<style>
+body {
+	padding: 40px;
+}
+
+.instruction {
+	font-size: 20px;
+}
+
+.tip { 
+	font-size: 16px;
+	margin-bottom: 50px;
+}
+
+#jumbledStepsWrapper span {
+	background: #FCBC7D;
+	box-sizing: border-box;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	padding: 25px 25px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin: 0 10px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;  
+}
+
+#orderedStepsWrapper span {
+	background: #fa9e9e;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.no-longer-draggable {
+	cursor: not-allowed !important;
+	background: lightgray !important;
+	opacity: 0.5 !important;
+}
+</style>
+</head>
+
+
+
+
+
+<body>
+
+<h1>Let's cook!</h1>
+	<p class="instruction"><b>Instruction:</b> Practice the recipe by dragging the recipe steps in the right order.</p>
+	<p class="tip"><em>Pro tip: Click and drag on the <b>TEXT</b>, not the image, to place it easier</em></p>
+		<div id="jumbledStepsWrapper">
+			<span id="Add milks" data-source-id="Add milks" draggable="true"><img src="smilk.png" width="50" height="auto">Add!</span>
+			<span id="Bake" data-source-id="Bake" draggable="true"><img src="sbake.png" width="50" height="50">Bake!</span>
+			<span id="Add custard" data-source-id="Add custard" draggable="true"><img src="sadd-custard.png" width="50" height="50">Add!</span>
+			<span id="Make caramel" data-source-id="Make caramel" draggable="true"><img src="smix.png" width="50" height="50">Caramel!</span>
+			<span id="Separate egg yolks" data-source-id="Separate egg yolks" draggable="true"><img src="segg.png" width="50" height="50">Separate!</span>
+			<span id="Preheat" data-source-id="Preheat" draggable="true"><img src="soven.png" width="50" height="50">Preheat!</span
+		</div>
+		<div id="orderedStepsWrapper">
+			<span data-target-id="Preheat"></span>
+			<span data-target-id="Separate egg yolks"></span> 
+			<span data-target-id="Add milks"></span>
+			<span data-target-id="Make caramel"></span>
+			<span data-target-id="Add custard"></span>
+			<span data-target-id="Bake"></span>
+		</div>
+
+<script>
+	const jumbledSteps = document.querySelectorAll('#jumbledStepsWrapper > span');
+	const orderedSteps = document.querySelectorAll('#orderedStepsWrapper > span');
+
+	jumbledSteps.forEach(el => {
+		el.addEventListener('dragstart', dragStartHandler);
+		el.addEventListener('dragend', dragEndHandler);
+	})
+	orderedSteps.forEach(el => {
+		el.addEventListener('dragenter', dragEnterHandler);
+		el.addEventListener('dragover', dragOverHandler);
+		el.addEventListener('dragleave', dragLeaveHandler);
+		el.addEventListener('drop', dropHandler);
+	})
+
+	function dragStartHandler(e) {
+		e.dataTransfer.setData('text', e.target.getAttribute('data-source-id'));
+		e.target.style = 'opacity: 0.3';
+	}
+	
+	function dragEndHandler(e) {
+		e.target.style = 'opacity: 1';
+	}
+
+	function dragEnterHandler(e) {
+		e.target.style = 'border: 2px dashed black; box-sizing: border-box; background: #f76e6e';
+	}
+
+	function dragOverHandler(e) {
+		event.preventDefault();
+	}
+
+	function dragLeaveHandler(e) {
+		e.target.style = 'border: none; background: #fa9e9e';
+	}
+
+	function dropHandler(e) {
+		e.preventDefault();
+		dragLeaveHandler(e); 
+	  
+		const dataSourceId = e.dataTransfer.getData('text'); 
+		const dataTargetId = e.target.getAttribute('data-target-id');
+	  
+		if(dataSourceId === dataTargetId) {
+			e.target.insertAdjacentHTML('afterbegin', dataSourceId);
+			e.target.style = 'border: none; background: #70c2b8';
+		
+		let sourceElemDataId = 'span[data-source-id="' + dataSourceId + '"]';
+		let sourceElemSpanTag = document.querySelector(sourceElemDataId);
+		
+		Object.assign(sourceElemSpanTag, {
+			className: 'no-longer-draggable',
+			draggable: false,
+			});
+		}
+	}
+</script>
+
+</body>
+</html>

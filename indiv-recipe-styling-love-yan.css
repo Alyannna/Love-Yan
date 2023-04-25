@@ -1,0 +1,210 @@
+/* layout stuff */
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  padding: 100px;
+}
+
+/* side by side columns*/
+.content {
+  flex: 50%;
+  padding: 10px;
+}
+
+
+
+
+.title {
+	display: flex;
+	justify-content: center;
+	margin: 15px;
+	font-family: "highest-praise", sans-serif, "brush script mt", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 100px;
+}
+
+.desc {
+	display: flex;
+	justify-content: center;
+	margin: 15px;
+}
+
+.info {
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+}
+
+.about {
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+}
+
+
+
+/*download button styling*/
+.PDF-buttons {
+	text-align: center;
+	margin: 20px;
+}
+
+.download {
+	background-color: #DE172B;
+	border: none;
+	border-radius: 6%;
+	color: white;
+	padding: 12px 20px;
+	cursor: pointer;
+	font-size: 15px;
+	text-align: center;
+}
+
+/* on hover link BG changes color */
+.download:hover {
+	background-color: #b91324;
+}
+
+.shopping {
+	background-color: #DE172B;
+	border: none;
+	border-radius: 6%;
+	color: white;
+	padding: 12px 20px;
+	cursor: pointer;
+	font-size: 15px;
+	text-align: center;
+}
+
+/* on hover link BG changes color */
+.shopping:hover {
+	background-color: #b91324;
+}
+
+
+
+
+
+/*ingredients list styling*/
+.subhead {
+	font-size: 30px;
+}
+
+.sub-subhead {
+	font-size: 20px;
+}
+
+
+
+/*directions/lines */
+.line {
+	display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hide other checkbox */
+.line input {
+    position: absolute;
+	opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/*custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #F0E4D5;
+}
+
+/* on hover link BG changes color */
+.line:hover input ~ .checkmark {
+  	background-color: #dcc2a3;
+}
+
+/* When the checkbox is checked, add a green background */
+.line input:checked ~ .checkmark {
+  	background-color: #439D93;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.line input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.line .checkmark:after {
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+
+
+.instructions {
+	font-size: 16px;
+	line-height: 1.6;
+	overflow-wrap: normal;
+	width: 80%;
+	padding: 5px;
+}
+
+
+
+
+/*highlight color*/
+.highlight {
+	background-color: #FCBC7D;
+}
+
+
+
+/*iframe for game*/
+.container {
+	position: relative;
+	width: 50%;
+	overflow: hidden;
+	padding-top: 62.5%; 
+	/* 8:5 aspect ratio */
+}
+
+.responsive-iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
