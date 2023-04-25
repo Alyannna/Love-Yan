@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Love, Yan</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="global-styling-love-yan.css">
+	<link rel="stylesheet" href="landing-page-css-love-yan.css">
+	<!--title/h1 font from Adobe fonts-->
+	<link rel="stylesheet" href="https://use.typekit.net/xwm4obb.css">
+	<!--icons ref by fontawesome.com-->
+	<script src="https://kit.fontawesome.com/fe20f8dbe0.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+<!--navigation bar-->
+	<nav class="navigation-bar">
+	<img src="logoL.png" class="logo" alt="Love, Yan logo" width="auto" height="60">
+		<a href="file:///C:/Users/jondr/OneDrive/Documents/work/ENU%20Y2/Web%20tech/CW2/About.html" style="text-decoration:none;">About</a>
+		<a href="file:///C:/Users/jondr/OneDrive/Documents/work/ENU%20Y2/Web%20tech/CW2/Recipes.html" style="text-decoration:none;">Recipes</a>
+		<a href="file:///C:/Users/jondr/OneDrive/Documents/work/ENU%20Y2/Web%20tech/CW2/index.html" style="text-decoration:none;">Home</a>
+	</nav>
+	
+	
+<!--social media links-->
+	<aside class="social-media-links">
+		<a href="https://www.instagram.com/" class="instagram"><i class="fa-brands fa-instagram"></i></a> 
+		<a href="https://www.facebook.com/" class="facebook"><i class="fa-brands fa-facebook-f"></i></a> 
+		<a href="https://www.twitter.com/" class="twitter"><i class="fa-brands fa-twitter"></i></a> 
+		<a href="https://www.youtube.com/" class="youtube"><i class="fa-brands fa-youtube"></i></a> 
+	</aside>
+
+
+<!--landing page-->
+	<main class="landing-page">
+		<section class="cta">
+			<h1>
+				<span class="cta-main">
+					Start your flavor adventure
+				</span>
+			</h1>
+			<p class="cta-text">
+				Traditional Filipino recipes from our kitchen to yours. Let's start cooking together!
+			</p>
+			<button class="cta-button" onClick="window.location='file:///C:/Users/jondr/OneDrive/Documents/work/ENU%20Y2/Web%20tech/CW2/Recipes.html';">Get Started</button> 
+		</section>
+		<img src="ihero.png" class="hero-image" alt="table spread of food" width="900" height="600">
+	</main>
+	
+
+<br><br>
+<!--site features section -->
+	<section class="site-info">
+		<section class="site-features">
+		<!-- feature 1-->
+		<!-- INSERT ICON -->
+			<h2>Easy and delicious recipes</h2>
+				<p>
+					Straightforward recipes with downloadable PDFs and shopping lists.
+				</p>
+		</section>
+		<section class="site-features">
+		<!--feature 2-->
+		<!-- INSERT ICON -->
+			<h2>Learn by doing</h2>
+				<p>
+					Interactive cooking games to simulate the experience before any time and money commitment.
+				</p>
+		</section>
+		<section class="site-features">
+		<!--feature 3-->
+		<!-- INSERT ICON -->
+			<h2>
+				Experience Filipino cuisine
+			</h2>
+				<p>	
+					From my family to yours, experience the best dishes the Philippines has to offer.
+				</p>
+		</section>
+	</section>
+<br>
+<br>
+
+<!--recipe preview carousel-->
+	<div class="slideshow-container">
+		<!--slide 1-->
+			<div class="mySlides fadeInAnimation">
+				<img src="iadobo-preview.png" alt="Preview image and text of adobo recipe" style="width:100%">
+			</div>
+		<!--slide 2-->
+			<div class="mySlides fadeInAnimation">
+				<img src="ilumpia-preview.png" alt="Preview image and text of lumpia recipe" style="width:100%">
+			</div>
+		<!--slide 3-->
+			<div class="mySlides fadeInAnimation">
+				<img src="itinola-preview.png" alt="Preview image and text of tinola recipe" style="width:100%">
+			</div>
+		<!--arrows-->
+			<a class="prev" onclick="plusSlides(-1)"><</a>
+			<a class="next" onclick="plusSlides(1)">></a>
+	</div>
+	<br>
+	<!--carousel dot indicators-->
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+<!--javascript for carousel-->
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			let dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {slideIndex = 1}    
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+		}
+			for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+			slides[slideIndex-1].style.display = "block";  
+			dots[slideIndex-1].className += " active";
+		}
+	</script>
+
+<br><br><br><br>
+
+<!--meet chefs preview section-->
+	<aside class="meet-chefs-image">
+		<img src="ichefs.png" class="chef-image" alt="Three people cooking" width="auto" height="400">
+	</aside>
+	<p class="meet-chefs-text">
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+		This is some text. This is some text. This is some text.
+	</p>
+	<br><br><br><br>
+
+
+
+<i class="scroll-up" id="scroll-up">
+	<img src="up-arrow.png" class="up-arrow" alt="up-arrow">
+</i>
+
+<script>
+	const scrollUp = document.querySelector("#scroll-up");
+
+scrollUp.addEventListener("click", () => {
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: "smooth",
+	});
+});
+</script>
+
+
+<!--footer-->
+	<footer class="footer">
+		Copyright ©2023 | All rights reserved.
+	</footer>
+
+</body>
+</html>
